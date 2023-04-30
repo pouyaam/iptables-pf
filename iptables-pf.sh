@@ -12,9 +12,9 @@ export PATH
 sh_ver="1.1.1"
 
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
-Info="${Green_font_prefix}[信息]${Font_color_suffix}"
-Error="${Red_font_prefix}[错误]${Font_color_suffix}"
-Tip="${Green_font_prefix}[注意]${Font_color_suffix}"
+Info="${Green_font_prefix}[Information]${Font_color_suffix}"
+Error="${Red_font_prefix}[Mistake]${Font_color_suffix}"
+Tip="${Green_font_prefix}[Notice]${Font_color_suffix}"
 
 check_iptables(){
 	iptables_exist=$(iptables -V)
@@ -243,9 +243,9 @@ Set_iptables(){
 	fi
 }
 Update_Shell(){
-	sh_new_ver=$(wget --no-check-certificate -qO- -t1 -T3 "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/iptables-pf.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1)
+	sh_new_ver=$(wget --no-check-certificate -qO- -t1 -T3 "https://raw.githubusercontent.com/pouyaam/iptables-pf/main/iptables-pf.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1)
 	[[ -z ${sh_new_ver} ]] && echo -e "${Error} unable to link to Github !" && exit 0
-	wget -N --no-check-certificate "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/iptables-pf.sh" && chmod +x iptables-pf.sh
+	wget -N --no-check-certificate "https://raw.githubusercontent.com/pouyaam/iptables-pf/main/iptables-pf.sh" && chmod +x iptables-pf.sh
 	echo -e "The script has been updated to the latest version[ ${sh_new_ver} ] !(Note: Because the update method is to directly overwrite the currently running script, some errors may be prompted below, just ignore it)" && exit 0
 }
 check_sys
