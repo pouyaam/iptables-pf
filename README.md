@@ -9,6 +9,7 @@
 wget -N --no-check-certificate https://raw.githubusercontent.com/pouyaam/iptables-pf/main/iptables-pf.sh && chmod +x iptables-pf.sh && bash iptables-pf.sh
 ```
 ۲- سپس با انتخاب گزینه 1 اول از نصب شدن iptables و فعال شدن Port forwarding اطمینان حاصل کنید
+
 ۳- سپس با دستور زیر اجرا کنید دوباره اسکریپت
 ``` bash
 bash iptables-pf.sh
