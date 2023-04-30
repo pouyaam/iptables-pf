@@ -262,7 +262,7 @@ echo && echo -e " iptables Port forwarding one-click management script ${Red_fon
  ${Green_font_prefix}5.${Font_color_suffix} Remove iptables port forwarding
 ————————————
 Note: Please be sure to execute before the first use ${Green_font_prefix}1. Install iptables${Font_color_suffix}(not just install)" && echo
-read -e -p " 请输入数字 [0-5]:" num
+read -e -p " Please enter the number [0-5]:" num
 case "$num" in
 	0)
 	Update_Shell
