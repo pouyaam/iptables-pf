@@ -1,3 +1,51 @@
+# GOST
+
+به منظور فعال سازی با GOST مراحل زیر را طی کنید
+
+۱- اول با دستور زیر نرم افزار GOST را نصب کنید
+
+``` bash
+sudo apt install wget nano -y && wget https://github.com/ginuerzh/gost/releases/download/v2.11.5/gost-linux-amd64-2.11.5.gz && gunzip gost-linux-amd64-2.11.5.gz
+```
+
+۲- سپس دستور زیر را وارد کنید
+
+``` bash
+sudo mv gost-linux-amd64-2.11.5 /usr/local/bin/gost && sudo chmod +x /usr/local/bin/gost
+```
+
+۳- بعد فایل کانفیگ را با دستور زیر باز کنید
+
+``` bash
+sudo nano /usr/lib/systemd/system/gost.service
+```
+
+۴- سپس کانفیگ زیر را کپی کنید، بجای mtnn.ircf.space میتونید دامین یا IP خودتون رو وارد کنید
+
+‍‍``` bash
+[Unit]
+Description=GO Simple Tunnel
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/gost -L=tcp://:443/ircell.necrocdn.mom:443 -L=tcp://:80/ircell.necrocdn.mom:80
+
+[Install]
+WantedBy=multi-user.target
+```
+
+سپس با زدن CTRL+X و Y فایل مورد نظر را سیو کنید
+
+۵- با دستور زیر GOST رو اجرا کنید
+
+``` bash
+sudo systemctl start gost && systemctl enable gost
+```
+
+
+
 # iptables-pf
 این اسکریپت به منظور فعال سازی Port Forwarding با iptables ساخته شده
 
