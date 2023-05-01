@@ -21,8 +21,7 @@ sudo nano /usr/lib/systemd/system/gost.service
 ```
 
 ۴- سپس کانفیگ زیر را کپی کنید، بجای mtnn.ircf.space میتونید دامین یا IP خودتون رو وارد کنید
-
-‍‍``` bash
+```
 [Unit]
 Description=GO Simple Tunnel
 After=network.target
