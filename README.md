@@ -29,7 +29,7 @@ Wants=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/gost -L=tcp://:443/ircell.necrocdn.mom:443 -L=tcp://:80/ircell.necrocdn.mom:80
+ExecStart=/usr/local/bin/gost -L=tcp://:443/mtnn.ircf.space:443 -L=tcp://:80/mtnn.ircf.space:80
 
 [Install]
 WantedBy=multi-user.target
